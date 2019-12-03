@@ -24,7 +24,7 @@ if (mongoURL == null) {
     mongoHost = process.env[mongoServiceName + '_SERVICE_HOST'];
     mongoPort = process.env[mongoServiceName + '_SERVICE_PORT'];
 
-// Needed to hard code to get the info from ENV 
+// Needed to hard code to get the info from ENV
     mongoDatabase = process.env['MONGODB_DATABASE'];
     mongoPassword = process.env['MONGODB_PASSWORD'];
     mongoUser = process.env['MONGODB_USER'];
@@ -92,7 +92,7 @@ console.log('mongoURL in initDb: %s', mongoURL);
 
   var mongodb = require('mongodb');
 
-console.log('mongodb in initDb: %s', mongodb);
+//console.log('mongodb in initDb: %s', mongodb);
 
   if (mongodb == null) return;
 
@@ -101,7 +101,13 @@ console.log('mongodb in initDb: %s', mongodb);
 console.log('Try to conect to MongoDB at: %s', mongoURL);
 
   mongodb.connect(mongoURL, function(err, conn) {
+
+
     if (err) {
+
+
+console.log('Conection error to MongoDB at: %s', err);
+
       callback(err);
       return;
     }
