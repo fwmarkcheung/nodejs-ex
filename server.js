@@ -23,9 +23,16 @@ if (mongoURL == null) {
     var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase();
     mongoHost = process.env[mongoServiceName + '_SERVICE_HOST'];
     mongoPort = process.env[mongoServiceName + '_SERVICE_PORT'];
-    mongoDatabase = process.env[mongoServiceName + '_DATABASE'];
-    mongoPassword = process.env[mongoServiceName + '_PASSWORD'];
-    mongoUser = process.env[mongoServiceName + '_USER'];
+
+// Needed to hard code to get the info from ENV 
+    mongoDatabase = process.env['MONGODB_DATABASE'];
+    mongoPassword = process.env['MONGODB_PASSWORD'];
+    mongoUser = process.env['MONGODB_USER'];
+
+
+//    mongoDatabase = process.env[mongoServiceName + '_DATABASE'];
+//    mongoPassword = process.env[mongoServiceName + '_PASSWORD'];
+//    mongoUser = process.env[mongoServiceName + '_USER'];
 
 console.log('mongoServiceName: %s', mongoServiceName);
 console.log('mongoHost: %s', mongoHost);
