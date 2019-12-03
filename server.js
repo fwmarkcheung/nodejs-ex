@@ -61,13 +61,26 @@ console.log('Getting info from secrets');
     mongoURL += mongoHost + ':' +  mongoPort + '/' + mongoDatabase;
   }
 }
+
+
+
 var db = null,
     dbDetails = new Object();
 
+
+
+
 var initDb = function(callback) {
+
+console.log('mongoURL in initDb: %s', mongoURL);
+
+
   if (mongoURL == null) return;
 
   var mongodb = require('mongodb');
+
+console.log('mongodb in initDb: %s', mongodb);
+
   if (mongodb == null) return;
 
 
